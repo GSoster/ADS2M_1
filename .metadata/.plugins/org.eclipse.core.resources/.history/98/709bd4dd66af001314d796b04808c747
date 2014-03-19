@@ -1,0 +1,6 @@
+
+public class You {
+	public static String sayYou(){
+		return "You!";	
+	}
+}

@@ -1,6 +1,18 @@
 
 public class You {
-	public String sayYou(){
-		return "You!";	
+	
+	private String user;
+	
+	public String sayUser(){
+		return this.getUser();	
 	}
+	
+	public void setUser(String user){
+		this.user = user;
+	}
+	
+	public String getUser(){
+		return this.user;	
+	}
+	
 }

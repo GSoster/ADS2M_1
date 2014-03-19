@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="2.0.3" sequence="1" timestamp="1395231686032" analysisTimestamp="1395231683937" release="">
+  <Project projectName="Pessoa">
+    <Jar>C:\Users\180901405\ADS2M_1\Pessoa</Jar>
+    <AuxClasspathEntry>C:\Users\180901405\ADS2M_1\Pessoa</AuxClasspathEntry>
+    <SrcDir>C:\Users\180901405\ADS2M_1\Pessoa</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Wed, 19 Mar 2014 09:21:06 -0300" total_classes="5" referenced_classes="17" total_bugs="0" total_size="117" num_packages="1" vm_version="23.6-b04" cpu_seconds="2.37" clock_seconds="2.10" peak_mbytes="175.05" alloc_mbytes="494.94" gc_seconds="0.14">
+    <PackageStats package="" total_bugs="0" total_types="5" total_size="117">
+      <ClassStats class="Main" sourceFile="Main.java" interface="false" size="9" bugs="0"/>
+      <ClassStats class="PController" sourceFile="PController.java" interface="false" size="31" bugs="0"/>
+      <ClassStats class="PView" sourceFile="PView.java" interface="false" size="11" bugs="0"/>
+      <ClassStats class="Pessoa" sourceFile="Pessoa.java" interface="false" size="32" bugs="0"/>
+      <ClassStats class="Telefone" sourceFile="Telefone.java" interface="false" size="34" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="536" invocations="2" avgMicrosecondsPerInvocation="268112" maxMicrosecondsPerInvocation="469848" standardDeviationMircosecondsPerInvocation="201736"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="344" invocations="333" avgMicrosecondsPerInvocation="1033" maxMicrosecondsPerInvocation="45235" standardDeviationMircosecondsPerInvocation="3586"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.TestingGround" totalMilliseconds="241" invocations="5" avgMicrosecondsPerInvocation="48266" maxMicrosecondsPerInvocation="143614" standardDeviationMircosecondsPerInvocation="48324"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="130" invocations="334" avgMicrosecondsPerInvocation="391" maxMicrosecondsPerInvocation="1188" standardDeviationMircosecondsPerInvocation="147"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="106" invocations="52" avgMicrosecondsPerInvocation="2043" maxMicrosecondsPerInvocation="59827" standardDeviationMircosecondsPerInvocation="8224"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.CheckCalls" totalMilliseconds="53" invocations="5" avgMicrosecondsPerInvocation="10754" maxMicrosecondsPerInvocation="15270" standardDeviationMircosecondsPerInvocation="4409"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="52" invocations="17" avgMicrosecondsPerInvocation="3059" maxMicrosecondsPerInvocation="14083" standardDeviationMircosecondsPerInvocation="3942"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="50" invocations="84" avgMicrosecondsPerInvocation="596" maxMicrosecondsPerInvocation="5311" standardDeviationMircosecondsPerInvocation="796"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="46" invocations="192" avgMicrosecondsPerInvocation="242" maxMicrosecondsPerInvocation="2441" standardDeviationMircosecondsPerInvocation="342"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="35" invocations="52" avgMicrosecondsPerInvocation="690" maxMicrosecondsPerInvocation="5260" standardDeviationMircosecondsPerInvocation="890"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1395231686032" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>

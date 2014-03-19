@@ -1,0 +1,8 @@
+
+public static class Hello {
+
+	public static String sayHello(){
+		return "Hello ";	
+	}
+	
+}
