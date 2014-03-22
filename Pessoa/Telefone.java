@@ -1,10 +1,10 @@
 public class Telefone{
     private String tipo;
-    private int codArea;
-    private int n1, n2;
+    private String codArea;
+    private String n1, n2;
     
     //Método Construtor
-    public Telefone(String tipo, int codArea, int n1, int n2){
+    public Telefone(String tipo, String codArea, String n1, String n2){
         this.setTipo(tipo);
         this.setCodArea(codArea);
         this.setN1(n1);        
@@ -15,26 +15,26 @@ public class Telefone{
     public void setTipo(String tipo){
         this.tipo = tipo;
     }
-    public void setCodArea(int cod){
+    public void setCodArea(String cod){
         this.codArea = cod;
     }
-    public void setN1(int n1){
+    public void setN1(String n1){
         this.n1 = n1;
     }    
-    public void setN2(int n2){
+    public void setN2(String n2){
         this.n2 = n2;
     }        
     
     public String getTipo(){
         return this.tipo;
     }
-    public int getCodArea(){
+    public String getCodArea(){
         return this.codArea;
     }
-    public int getN1(){
+    public String getN1(){
         return this.n1;
     }    
-    public int getN2(){
+    public String getN2(){
         return this.n2;
     }    
 
