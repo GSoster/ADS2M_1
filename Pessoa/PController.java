@@ -1,5 +1,5 @@
 import java.util.Calendar;
-import java.util.Random;
+//import java.util.Random;
 public class PController{
     //Atributos
     private PView pv;
@@ -14,6 +14,9 @@ public class PController{
     private String listaEnderecos[] = {"Av. Assis. Brasil", "Rua Alendrina", "Rua Stephn", "Av.Coronel Valadares", "Rua Pernambuco", "Rua Amazonas",//6
         "Rua Andrade Neves", "Av. Salvatorri Trulliano", "Av Porca Maddona", "Rua Gari", "St. San Martin", "St. Correa", "Rua Rio de Janeiro", "Av. Rio Grande",//8
         "Rua Sao Paulo", "Rua San Sebastian", "Av. Pallermo", "Av. Zumbi dos Palmares", "Av. Isaura","Rua Mathias"};//6
+    
+    private String listaTelefone[] = {"3432", "3312", "3321", "3365","3356","3345","4321","4312","4567","8853","4845","4456","4512",
+    		"3431","4123","3214","3894","7895","4561","3154","3527"};
     
     //Metodo Construtor    
     public PController(){
@@ -52,6 +55,13 @@ public class PController{
     	return nRandom;
     }
     
+    
+    private String gerarTelefone(){
+    	int nRandom = this.gerarRandom(3);
+    	String numeros = this.listaTelefone[nRandom];
+    	return numeros;
+    }
+    
     public String escolhe(int tipo){
     	//Pega os milesegundos da data, e os soma (não multiplica para não zerar, caso algum seja zero).
     	int parametro = 0;
@@ -72,17 +82,22 @@ public class PController{
     	}while(parametro == 0);
     	//para garantir a aleatoridade do número, será passado um parâmetro (que é a soma dos milisegundos da data)        	
     	int nr = this.gerarRandom(parametro);    	
-        if(tipo == 1){
+        
+    	//verifica qual lista deve ser pesquisada
+    	if(tipo == 1){// o tipo 1 corresponde a nome
             return this.listaNomes[nr];
-        }else if(tipo == 0){
+        }else if(tipo == 0){// o tipo 1 corresponde a sobrenome
             return this.listaSobrenomes[nr];
-        }else{
+        }else{// o tipo 1 corresponde a endereco
             return this.listaEnderecos[nr];
         }
+    	
     }
         
    public void gerar(){
-        Telefone t = new Telefone("residencial",51,343,2787);
+        //Telefone t = new Telefone("residencial",51,343,2787);
+	   Telefone t = new Telefone("residencial",gerarTelefone().substring(0,2),gerarTelefone().substring(0,3),gerarTelefone());
+        //Pessoa Parametros: nome, sobrenome, endereço, telefone
         Pessoa p = new Pessoa(this.escolhe(1), this.escolhe(0),this.escolhe(2), t);                    
         pv.exibePessoa(p.getNome(), p.getSobrenome(), p.getEndereco(), p.getTelefone().toString());
 
