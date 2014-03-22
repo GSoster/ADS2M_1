@@ -1,10 +1,14 @@
 package com.senac.jogos.cartas;
 
 public class Baralho {
-	
+	//Atributos
 	private Carta[] cartas;
 	private int numCartas;
 	
+	/*construror
+	 * define os 4 naipes
+	 * cria um vertor com 52 cartas e o preenche com 13 cartas de cada naipe
+	 */
 	public Baralho() {
 		char[] naipes = {'C','O','P','E'};
 		int[] numeros = {1,2,3,4,5,6,7,8,9,10,11,12,13};
@@ -20,6 +24,7 @@ public class Baralho {
 		}
 	}
 	
+	//saca uma carta aleatoria do baralho
 	public Carta drawCarta() {
 		Carta carta = null;
 		
@@ -31,6 +36,9 @@ public class Baralho {
 		return carta;
 	}
 
+	/*
+	 * Retorna um boolean que diz se as cartas ja foram todas sacadas ou nao
+	 */
 	public boolean isEmpty() {
 		return numCartas == 0;
 	}
