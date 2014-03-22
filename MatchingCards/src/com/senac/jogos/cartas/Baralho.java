@@ -42,4 +42,9 @@ public class Baralho {
 	public boolean isEmpty() {
 		return numCartas == 0;
 	}
+	
+	public void setNumCartas(int cartas){
+		this.numCartas = cartas;
+	}
+	
 }

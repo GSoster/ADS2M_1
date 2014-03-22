@@ -4,10 +4,7 @@ public class MatchingGame {
 
 	public static void main(String[] args) {				
 		GameController game = new GameController();
-		while (! game.isOver()) {
-			
-			
-			//game.showStatus();
+		while (! game.isOver()) {						
 			game.realizaJogada();
 		}
 	}

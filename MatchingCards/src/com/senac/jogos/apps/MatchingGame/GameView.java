@@ -30,7 +30,8 @@ public class GameView {
 	/*	########	Metodos criados por mim		########*/
 	public String exibeOpcoes(){
 		System.out.print("Digite: 'sacar' -> sacar uma carta");
-		System.out.println(" 'passar a vez' -> para passar a vez (perde 1 ponto)");		
+		System.out.println(" 'passar' -> para passar a vez (perde 1 ponto)");
+		System.out.print(" 'parar' -> acaba o jogo e exibe vencedor");
 		return getUserInput();		
 	}
 	
@@ -40,7 +41,10 @@ public class GameView {
 			System.out.print("Insira a quantidade de jogadores: ");
 			qtdPlayers = teclado.nextInt();
 		}while((qtdPlayers<1) || (qtdPlayers>4));		 
-		return qtdPlayers;
-		
+		return qtdPlayers;		
+	}
+	
+	public void exibir(String conteudo){
+		System.out.println(conteudo);
 	}
 }
