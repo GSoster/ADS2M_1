@@ -9,8 +9,11 @@ public class GameController {
 //Atributos
 	private MatchingGame game;
 	private Baralho baralho;
-	private Jogador jogador;
+	private Jogador jogador[];
 	private GameView view;
+	private int qtdPlayers;
+	
+	int jogDaVez = 0;
 	
 	/*metodo construtor
 	 * Instancia um novo jogador
@@ -19,12 +22,26 @@ public class GameController {
 	 * Instancia uma nova visao
 	 */
 	public GameController() {
-		jogador = new Jogador();
+		
+		view = new GameView();		
+		jogador = new Jogador[this.defineQtdPlayers()];
+		int i = 0;
+		while(i<this.qtdPlayers){
+			jogador[i] = new Jogador(); 
+			i++;
+		}
 		baralho = new Baralho();
 		game = new MatchingGame(baralho.drawCarta());
-		view = new GameView();
+		
 	}
 
+	
+	public int defineQtdPlayers(){
+		this.qtdPlayers = this.view.exibeInicio(); 
+		return this.qtdPlayers;
+	}
+	
+	
 	/*
 	 * realizaJogada()
 	 * realiza as principais acoes do jogo:
@@ -35,13 +52,23 @@ public class GameController {
 	 * define a carta da mesa como a ultima carta comprada.
 	 */
 	public void realizaJogada() {
-		if (view.getUserInput().equalsIgnoreCase("jogar")) {
-			Carta comprada = baralho.drawCarta();
-			view.mostraCarta(comprada);
-			int score = game.matchCards(comprada);
-			jogador.addPontos(score);
-			game.setMesa(comprada);
+		//para a quantidade de jogadores
+		for(int i = 0; i<this.qtdPlayers;i++){
+			//se a opcao for sacar
+			String opcao = this.view.exibeOpcoes();
+			if (opcao.equalsIgnoreCase("sacar")) {
+				Carta comprada = baralho.drawCarta();
+				view.mostraCarta("Jogador Comprou: ",comprada);
+				int score = game.matchCards(comprada);
+				jogador[i].addPontos(score);
+				view.mostraJogador(jogador[i],i);
+				game.setMesa(comprada);
+				view.mostraCarta("Carta na mesa: ",game.getMesa());
+			}		
 		}
+		
+		
+		
 	}
 
 	//retorna um boolean que checa se as cartas ja foram todas sacadas ou nao
@@ -54,9 +81,13 @@ public class GameController {
 	 * mostra o numero e naipe da carta na mesa.
 	 */
 	public void showStatus() {
-		view.mostraJogador(jogador);
-		view.mostraCarta(game.getMesa());
+		//view.mostraJogador(jogador[jogDaVez]);
+		//view.mostraCarta(game.getMesa());
 	}
+	
+	
+	
+	
 	
 }
 

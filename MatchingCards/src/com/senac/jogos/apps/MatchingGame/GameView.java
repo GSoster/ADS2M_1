@@ -16,14 +16,31 @@ public class GameView {
 		return teclado.nextLine();
 	}
 	
-	public void mostraCarta(Carta carta) {
-		out.println(String.format("Carta: %d%c",
+	public void mostraCarta(String origem,Carta carta) {
+		out.println(String.format(origem + " %d%c",
 				                  carta.getNumero(),
 				                  carta.getNaipe()));
 	}
 	
-	public void mostraJogador(Jogador jogador) {
-		out.println(String.format("Pontos: %d",
-				                  jogador.getPontos()));
+	public void mostraJogador(Jogador jogador, int n) {
+		System.out.println(" O Jogador "+n+" tem "+jogador.getPontos()+" pontos.");		
+		
+	}
+	
+	/*	########	Metodos criados por mim		########*/
+	public String exibeOpcoes(){
+		System.out.print("Digite: 'sacar' -> sacar uma carta");
+		System.out.println(" 'passar a vez' -> para passar a vez (perde 1 ponto)");		
+		return getUserInput();		
+	}
+	
+	public int exibeInicio(){
+		int qtdPlayers = 0;
+		do{
+			System.out.print("Insira a quantidade de jogadores: ");
+			qtdPlayers = teclado.nextInt();
+		}while((qtdPlayers<1) || (qtdPlayers>4));		 
+		return qtdPlayers;
+		
 	}
 }
