@@ -12,7 +12,7 @@ public class GameController {
 	private Jogador jogador[];
 	private GameView view;
 	private int qtdPlayers;
-	
+	private boolean passar[] = new boolean[4];
 	int jogDaVez = 0;
 	
 	/*metodo construtor
@@ -25,8 +25,10 @@ public class GameController {
 		
 		view = new GameView();		
 		jogador = new Jogador[this.defineQtdPlayers()];
+		
 		int i = 0;
-		while(i<this.qtdPlayers){
+		while(i<this.qtdPlayers){			
+			this.passar[i] = false;
 			jogador[i] = new Jogador(); 
 			i++;
 		}
@@ -61,13 +63,19 @@ public class GameController {
 				view.mostraCarta("Jogador "+i+" Comprou: ",comprada);
 				int score = game.matchCards(comprada);
 				jogador[i].addPontos(score);
+				this.passar[i] = false;
 				view.mostraJogador(jogador[i],i);
 				game.setMesa(comprada);
-				view.mostraCarta("Carta na mesa: ",game.getMesa());
-			}else if(opcao.equalsIgnoreCase("passar a vez")) {				
-				this.view.exibir("Jogador "+i+" passou a vez" );
-				jogador[i].addPontos(-1);
-				view.mostraJogador(jogador[i],i);
+				this.mostrarCartaMesa();
+			}else if(opcao.equalsIgnoreCase("passar")) {				
+				if(this.passar[i] == false){
+					this.passar[i] = true;
+					this.view.exibir("Jogador "+i+" passou a vez" );
+					jogador[i].addPontos(-1);				
+					view.mostraJogador(jogador[i],i);
+				}else{
+					this.view.exibir("Jogador "+i+" não pode passar a vez novamente");
+				}
 			}else if(opcao.equalsIgnoreCase("parar")){
 				int ganhador = this.definirGanhador();
 				this.view.exibir("Jogador "+ganhador+" ganhou com ");
@@ -81,6 +89,10 @@ public class GameController {
 		
 	}
 
+	public void mostrarCartaMesa(){ 
+		view.mostraCarta("Carta na mesa: ",game.getMesa());
+	}
+	
 	//retorna um boolean que checa se as cartas ja foram todas sacadas ou nao
 	public boolean isOver() {
 		return baralho.isEmpty();
