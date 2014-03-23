@@ -77,9 +77,7 @@ public class GameController {
 					this.view.exibir("Jogador "+i+" não pode passar a vez novamente");
 				}
 			}else if(opcao.equalsIgnoreCase("parar")){
-				int ganhador = this.definirGanhador();
-				this.view.exibir("Jogador "+ganhador+" ganhou com ");
-				this.view.exibir(this.jogador[ganhador].getPontos()+" pontos.");
+				this.fimDeJogo();				
 				this.baralho.setNumCartas(0);
 			}
 			
@@ -119,6 +117,17 @@ public class GameController {
 			}
 		}
 		return maior;
+	}
+	
+	/*
+	 * Metodo fim de jogo
+	 * Define o jogador que venceu (objeteve o maior numero de pontos) e exibe uma mensagem.
+	 */
+	public void fimDeJogo(){
+		int ganhador = this.definirGanhador();
+		this.view.exibir("__________FIM DE JOGO__________");
+		this.view.exibir("Jogador "+ganhador+" ganhou com ");
+		this.view.exibir(this.jogador[ganhador].getPontos()+" pontos.");
 	}
 	
 	

@@ -8,6 +8,7 @@ public class MatchingGame {
 		while (! game.isOver()) {						
 			game.realizaJogada();
 		}
+		game.fimDeJogo();
 	}
 
 }
