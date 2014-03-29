@@ -12,9 +12,12 @@ public class ClienteController extends PessoaController{
 		this.cv = new ClienteView();
 	}
 	
-	public Cliente criarCliente(){
+	public void criarCliente(){
 		this.criarPessoa();			
-		this.cliente = new Cliente(getPessoa().getNome(), getPessoa().getSobrenome(), getPessoa().getEndereco());		
+		this.cliente = new Cliente(getPessoa().getNome(), getPessoa().getSobrenome(), getPessoa().getEndereco());				
+	}
+	
+	public Cliente getCliente(){
 		return this.cliente;
 	}
 }

@@ -17,8 +17,7 @@ public class View {
 	}
 	
 	public String receber(){		
-		String entrada = ler.nextLine();
-		ler.close();
+		String entrada = this.ler.nextLine();		
 		return entrada;
 	}
 	
