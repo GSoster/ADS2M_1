@@ -8,7 +8,7 @@ public class Cliente extends Pessoa {
 		super(n, sn, e);
 	}
 	
-	public void adicionarConta(Conta c){
+	public void setConta(Conta c){
 		this.conta = c;
 	}
 	

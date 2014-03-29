@@ -14,6 +14,10 @@ public class Controller {
 	private Cliente cliente;
 	private Conta conta;
 	
+	boolean clienteCriado = false;
+	boolean contaCriada = false;
+	
+	//Metodo construtor
 	public Controller(){
 		this.view = new View();
 		this.inicio();
@@ -30,10 +34,18 @@ public class Controller {
 		do{
 			this.view.exibir("\n############################");
 			this.view.exibir("Por favor, escolha sua opcao: ");
-			this.view.exibir("1 - Criar Cliente.");
-			this.view.exibir("2 - Criar Conta");
-			this.view.exibir("3 - Criar Conta Especial");
-			this.view.exibir("4 - Criar Conta Investimento");
+			if(!clienteCriado){
+				this.view.exibir("1 - Criar Cliente.");
+			}
+			if(clienteCriado){
+				this.view.exibir("2 - Criar Conta");
+				this.view.exibir("3 - Criar Conta Especial");
+				this.view.exibir("4 - Criar Conta Investimento");			
+			}
+			if(contaCriada){
+				this.view.exibir("5 - Depositar");
+				this.view.exibir("6 - Sacar");
+			}
 			this.view.exibir("0 - Sair");
 			opcao = Integer.parseInt(this.view.receber());
 			tratarEscolha(opcao);
@@ -44,16 +56,27 @@ public class Controller {
 		switch(opcao){
 			
 			case 1:
-				this.cliControl = new ClienteController();
-				this.cliControl.criarCliente();
-				this.cliente = this.cliControl.getCliente();
-				this.view.exibir("Cliente Criado com Sucesso!");
+					this.cliControl = new ClienteController();
+					this.cliControl.criarCliente();
+					this.cliente = this.cliControl.getCliente();
+					clienteCriado = true;
+					this.view.exibir("Cliente Criado com Sucesso!");
 				break;
 			case 2:
-				this.contControl = new ContaController();
-				this.contControl.criarConta();
-				this.conta = this.contControl.getConta();
-				this.view.exibir("Conta Criada com Sucesso!");
+					this.contControl = new ContaController();
+					this.contControl.criarConta();
+					this.conta = this.contControl.getConta();
+					this.cliente.setConta(this.conta);
+					contaCriada = true;
+					this.view.exibir("Conta Criada com Sucesso!");
+				break;
+			case 5:
+					this.contControl.depositar();
+					this.contControl.exibirSaldo();
+				break;
+			case 6:
+					this.contControl.sacar();
+					this.contControl.exibirSaldo();
 				break;
 		}
 	}

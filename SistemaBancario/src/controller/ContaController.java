@@ -24,4 +24,22 @@ public class ContaController {
 		return this.conta;
 	}
 	
+	public void depositar(){
+		double valor = this.cv.depositar();
+		this.conta.depositar(valor);
+	}
+	
+	public void sacar(){
+		double valor = this.cv.sacar();
+		this.conta.sacar(valor);
+	}
+
+	public void exibirSaldo(){
+		this.cv.exibir("Saldo: "+this.conta.getSaldo());
+	}
+	
+	public void setConta(Conta c){
+		this.conta = c;
+	}
+	
 }
