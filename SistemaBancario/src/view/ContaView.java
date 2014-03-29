@@ -1,18 +1,11 @@
 package view;
 
-import java.util.Scanner;
-
-public class ContaView {
+public class ContaView extends View{
 	
-	public ContaView(){};
+	//Metodo Construtor
+	public ContaView(){
+		super();
+	};
 	
-	public void exibir(String mensagem){
-		System.out.println(mensagem);
-	}
 	
-	public void receber(){
-		Scanner ler = new Scanner(System.in);
-		ler.nextLine();
-		ler.close();
-	}
 }
