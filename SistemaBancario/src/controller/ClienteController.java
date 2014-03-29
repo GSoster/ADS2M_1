@@ -3,7 +3,7 @@ package controller;
 import view.ClienteView;
 import model.Cliente;
 
-public class ClienteController {
+public class ClienteController extends PessoaController{
 
 	private Cliente cliente;
 	private ClienteView cv;
@@ -13,7 +13,8 @@ public class ClienteController {
 	}
 	
 	public Cliente criarCliente(){
-		this.cv.criarCliente();
-		return this.cliente = null;
+		this.criarPessoa();			
+		this.cliente = new Cliente(getPessoa().getNome(), getPessoa().getSobrenome(), getPessoa().getEndereco());		
+		return this.cliente;
 	}
 }

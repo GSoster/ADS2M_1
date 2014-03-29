@@ -33,7 +33,13 @@ public class Controller {
 	}
 	
 	public void tratarEscolha(int opcao){
+		switch(opcao){
+			
+			case 1:
+				
+				break;
 		
+		}
 	}
 	
 }
