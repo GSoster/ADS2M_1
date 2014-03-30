@@ -29,6 +29,9 @@ public class ContaController {
 		this.conta = new Conta(numeroConta, numVerificacao);
 	}
 
+	/*
+	 * Metodo responsavel por criar a conta especial
+	 */
 	public void criarContaEspecial() {
 		int numeroConta = Integer.parseInt(this.cv.cadastrarNumeroConta());
 		int numVerificacao = Integer.parseInt(this.cv
@@ -37,9 +40,13 @@ public class ContaController {
 		this.contaEspecial = new Especial(numeroConta, numVerificacao, limite);
 	}
 
+	/*
+	 * Metodo responsavel por criar a conta Investimento
+	 */
 	public void criarContaInvestimento() {
 		int numeroConta = Integer.parseInt(this.cv.cadastrarNumeroConta());
-		int numVerificacao = Integer.parseInt(this.cv.cadastrarNumeroVerificacao());
+		int numVerificacao = Integer.parseInt(this.cv
+				.cadastrarNumeroVerificacao());
 		int dataCriacao = this.cv.cadastrarData();
 		this.contaInvestimento = new Investimento(numeroConta, numVerificacao,
 				dataCriacao);
@@ -55,7 +62,8 @@ public class ContaController {
 
 	/*
 	 * retira um valor da conta contanto que esse o saldo da conta seja igual ou
-	 * superior
+	 * superior (com excessao do caso da conta especial, que leva em
+	 * consideracao também o limite)
 	 */
 	public void sacar() {
 		try {
@@ -66,37 +74,46 @@ public class ContaController {
 		}
 	}
 
-	public boolean verificarConta(){
-		if(Integer.parseInt(this.cv.cadastrarNumeroConta()) == this.conta.getNumConta()){
-			if(Integer.parseInt(this.cv.cadastrarNumeroVerificacao()) == this.conta.getNumVerificacao()){
+	/*
+	 * Verifica se o cliente e realmente o dono da conta questionando o numero
+	 * da conta e o numero de verificacao
+	 */
+	public boolean verificarConta() {
+		if (Integer.parseInt(this.cv.cadastrarNumeroConta()) == this.conta
+				.getNumConta()) {
+			if (Integer.parseInt(this.cv.cadastrarNumeroVerificacao()) == this.conta
+					.getNumVerificacao()) {
 				return true;
-			}			
+			}
 		}
 		return false;
 	}
-	
-	
+
+	// Exibe o saldo na tela
 	public void exibirSaldo() {
 		this.cv.exibir("Saldo: " + this.conta.getSaldo());
 	}
 
-	public void dividendos(){
+	/*
+	 * Calcula os dividendos e deixa o saldo atualizado
+	 */
+	public void dividendos() {
 		double taxa = this.cv.dividendos();
 		this.contaInvestimento.dividendos(taxa);
 	}
-	
+
 	public void setConta(Conta c) {
 		this.conta = c;
 	}
-	
-	public void setContaInvestimento(Investimento inv){
+
+	public void setContaInvestimento(Investimento inv) {
 		this.contaInvestimento = inv;
 	}
-	
-	public void setContaEspecial(Especial esp){
+
+	public void setContaEspecial(Especial esp) {
 		this.contaEspecial = esp;
 	}
-	
+
 	// Recupera a conta
 	public Conta getConta() {
 		return this.conta;

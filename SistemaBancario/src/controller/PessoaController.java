@@ -5,23 +5,28 @@ import view.PessoaView;
 
 public class PessoaController {
 
-	//Atributos
+	// Atributos
 	private PessoaView pv;
 	private Pessoa p;
-	
-	public PessoaController(){
+
+	// Construtor
+	public PessoaController() {
 		this.pv = new PessoaView();
 	}
-	
-	public void criarPessoa(){
+
+	/*
+	 * recebe as entradas do usuario e cria um objeto pessoa
+	 */
+	public void criarPessoa() {
 		String nome = this.pv.cadastrarNome();
 		String sobreNome = this.pv.cadastrarSobreNome();
 		String endereco = this.pv.cadastrarEndereco();
-		this.p = new Pessoa(nome, sobreNome, endereco);		
+		this.p = new Pessoa(nome, sobreNome, endereco);
 	}
-	
-	public Pessoa getPessoa(){
+
+	// Retorna o objeto Pessoa
+	public Pessoa getPessoa() {
 		return this.p;
 	}
-	
+
 }

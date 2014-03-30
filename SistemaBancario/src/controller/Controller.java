@@ -18,6 +18,7 @@ public class Controller {
 	private Especial contaEspecial;
 	private Investimento contaInvestimento;
 
+	// Variaveis utilizadas para controle de fluxo e opcoes
 	boolean clienteCriado = false;
 	boolean contaInvestimentoCriada = false;
 	boolean contaCriada = false;
@@ -28,15 +29,24 @@ public class Controller {
 		this.inicio();
 	}
 
+	// Mensagem exibida inicialmente
 	private void inicio() {
 		this.view.exibir("Bem vindo ao Sistema Bancario");
 	}
 
+	/*
+	 * MENU DE CRIACAO menu 'externo' com as principais opcoes (opcoes de
+	 * CRIACAO)
+	 */
 	public void exibirMenu() {
 		int opcao;
 		do {
 			this.view.exibir("\n############################");
-			this.view.exibir("Por favor, escolha sua opcao: ");
+			if(clienteCriado && contaCriada){
+				this.view.exibir("Por favor, CONFIRME sua opcao: ");
+			}else{
+				this.view.exibir("Por favor, escolha sua opcao: ");
+			}
 			if (!clienteCriado) {
 				this.view.exibir("1 - Criar Cliente.");
 			}
@@ -78,7 +88,12 @@ public class Controller {
 			this.view.exibir("Conta Criada com Sucesso!");
 			while (escolha != 0) {
 				escolha = menuOperacoes();
-				tratarContaComum(escolha);
+				if (verificarConta()) {
+					tratarContaComum(escolha);
+				} else {
+					this.view
+							.exibir("Dados nao conferem, impossivel acessar a conta");
+				}
 			}
 			break;
 		case 3:
@@ -90,7 +105,12 @@ public class Controller {
 			this.view.exibir("Conta Especial criada com Sucesso!");
 			while (escolha != 0) {
 				escolha = menuOperacoes();
-				tratarContaEspecial(escolha);
+				if (verificarConta()) {
+					tratarContaEspecial(escolha);
+				} else {
+					this.view
+							.exibir("Dados nao conferem, impossivel acessar a conta");
+				}
 			}
 			break;
 		case 4:
@@ -102,10 +122,11 @@ public class Controller {
 			contaInvestimentoCriada = true;
 			while (escolha != 0) {
 				escolha = menuOperacoes();
-				if(verificarConta()){
+				if (verificarConta()) {
 					tratarContaInvestimento(escolha);
-				}else{
-					this.view.exibir("Dados nao conferem, impossivel acessar a conta");
+				} else {
+					this.view
+							.exibir("Dados nao conferem, impossivel acessar a conta");
 				}
 			}
 			break;
@@ -116,6 +137,10 @@ public class Controller {
 		}
 	}
 
+	/*
+	 * Menu que exibe as operacoes disponiveis (dependem do tipo da conta, como
+	 * dividendo)
+	 */
 	public int menuOperacoes() {
 		this.view.exibir("1 - Depositar");
 		this.view.exibir("2 - Sacar");
@@ -126,6 +151,10 @@ public class Controller {
 		return Integer.parseInt(this.view.receber());
 	}
 
+	/*
+	 * Metodo responsavel por tratar as escolhas feitas no menu de operacoes
+	 * caso a conta seja do tipo comum
+	 */
 	public void tratarContaComum(int escolha) {
 		switch (escolha) {
 		case 0:
@@ -145,6 +174,10 @@ public class Controller {
 		}
 	}
 
+	/*
+	 * Metodo responsavel por tratar as escolhas feitas no menu de operacoes
+	 * caso a conta seja do tipo especial
+	 */
 	public void tratarContaEspecial(int escolha) {
 		switch (escolha) {
 		case 0:
@@ -164,6 +197,10 @@ public class Controller {
 		}
 	}
 
+	/*
+	 * Metodo responsavel por tratar as escolhas feitas no menu de operacoes
+	 * caso a conta seja do tipo Investimento
+	 */
 	public void tratarContaInvestimento(int escolha) {
 		switch (escolha) {
 		case 0:
@@ -187,14 +224,17 @@ public class Controller {
 			break;
 		}
 	}
-	
-	
-	private boolean verificarConta(){
+
+	/*
+	 * Metodo responsavel por chamar o metodo que checa numero de verificacao e
+	 * numero da conta
+	 */
+	private boolean verificarConta() {
 		this.view.exibir(" ###  Autentificacao  ###");
-		if(this.contControl.verificarConta()){
+		if (this.contControl.verificarConta()) {
 			return true;
 		}
-		return false;		
+		return false;
 	}
 
 }

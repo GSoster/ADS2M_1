@@ -1,18 +1,20 @@
 package model;
 
 public class Cliente extends Pessoa {
-	
+	// Atributos
 	private Conta conta;
-	
-	public Cliente(String n, String sn, String e){
+
+	// Construtor
+	public Cliente(String n, String sn, String e) {
 		super(n, sn, e);
 	}
-	
-	public void setConta(Conta c){
+
+	// Acessores
+	public void setConta(Conta c) {
 		this.conta = c;
 	}
-	
-	public Conta getConta(){
+
+	public Conta getConta() {
 		return this.conta;
 	}
 }

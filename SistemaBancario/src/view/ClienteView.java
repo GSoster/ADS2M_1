@@ -1,12 +1,13 @@
 package view;
 
-public class ClienteView extends PessoaView{
-
-	public ClienteView(){
+public class ClienteView extends PessoaView {
+	// Construtor
+	public ClienteView() {
 		super();
 	}
-	
-	public String cadastrarNumeroConta(){
+
+	// nome autoexplicativo...
+	public String cadastrarNumeroConta() {
 		exibir("Insira o numero da Conta: ");
 		String numConta = receber();
 		return numConta;

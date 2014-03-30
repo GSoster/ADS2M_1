@@ -1,24 +1,25 @@
 package view;
 
-public class PessoaView extends View{
-
-	public PessoaView(){
+public class PessoaView extends View {
+	// Construtor
+	public PessoaView() {
 		super();
 	}
-	
-	
-	
-	public String cadastrarNome(){
+
+	// Exibe mensagem e captura a entrada do usuario
+	public String cadastrarNome() {
 		exibir("Insira o Nome: ");
-		return receber();		
+		return receber();
 	}
-	
-	public String cadastrarSobreNome(){
+
+	// Exibe mensagem e captura a entrada do usuario
+	public String cadastrarSobreNome() {
 		exibir("Insira o Sobrenome: ");
 		return receber();
 	}
-	
-	public String cadastrarEndereco(){
+
+	// Exibe mensagem e captura a entrada do usuario
+	public String cadastrarEndereco() {
 		exibir("Insira o Endereco: ");
 		return receber();
 	}
