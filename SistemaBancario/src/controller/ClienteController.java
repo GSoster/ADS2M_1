@@ -1,6 +1,6 @@
 package controller;
 
-import view.ClienteView;
+//import view.ClienteView;
 import model.Cliente;
 
 public class ClienteController extends PessoaController{

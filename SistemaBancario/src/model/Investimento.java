@@ -19,10 +19,13 @@ public class Investimento extends Conta{
 	}
 	
 	//Outros Metodos
-	//Aletera o valor do saldo dado uma taxa
-	public void dividendos(double taxa){
-		//tratar a taxa pois ela não virá como 1.43 e sim como 0.43 ou 43
-		this.saldo = this.saldo * taxa;
+
+	/*Aletera o valor do saldo dado uma taxa
+	 * ex.: saldo(500) * 0.43% = 2.15 
+	 */
+	public void dividendos(double taxa){		
+		double rendimento = (this.saldo) * (taxa/100);
+		this.saldo += rendimento;
 	}
-		
+			
 }//fim da classe
