@@ -4,12 +4,12 @@ import view.ClienteView;
 import model.Cliente;
 
 public class ClienteController extends PessoaController{
-
+	//Atributos
 	private Cliente cliente;
-	private ClienteView cv;
+	//o atributo abaixo nao estava sendo usado e para que o findbugs nao reclamasse foi comentado
+	//private ClienteView cv;
 	
 	public ClienteController(){
-		this.cv = new ClienteView();
 	}
 	
 	public void criarCliente(){

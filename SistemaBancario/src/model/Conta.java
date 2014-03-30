@@ -1,5 +1,7 @@
 package model;
 
+import lib.SaldoInsuficienteException;
+
 public class Conta {
 	//Atributos
 	protected double saldo;
@@ -35,9 +37,10 @@ public class Conta {
 	public void depositar(double valor){
 		this.saldo += valor;
 	}	
-	public void sacar(double valor){
+	
+	public void sacar(double valor) throws SaldoInsuficienteException{
 		if(this.saldo < valor){
-			//lança excessão
+			throw new SaldoInsuficienteException();
 		}
 		this.saldo -= valor;
 	}

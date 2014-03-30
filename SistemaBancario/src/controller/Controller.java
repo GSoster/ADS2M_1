@@ -2,6 +2,8 @@ package controller;
 
 import model.Cliente;
 import model.Conta;
+import model.Especial;
+import model.Investimento;
 import view.View;
 
 public class Controller {
@@ -13,8 +15,11 @@ public class Controller {
 	
 	private Cliente cliente;
 	private Conta conta;
+	private Especial contaEspecial;
+	private Investimento contaInvestimento;
 	
 	boolean clienteCriado = false;
+	boolean contaInvestimentoCriada = false;
 	boolean contaCriada = false;
 	
 	//Metodo construtor
@@ -37,22 +42,23 @@ public class Controller {
 			if(!clienteCriado){
 				this.view.exibir("1 - Criar Cliente.");
 			}
-			if(clienteCriado){
+			if(clienteCriado && !contaCriada){
 				this.view.exibir("2 - Criar Conta");
 				this.view.exibir("3 - Criar Conta Especial");
 				this.view.exibir("4 - Criar Conta Investimento");			
-			}
-			if(contaCriada){
-				this.view.exibir("5 - Depositar");
-				this.view.exibir("6 - Sacar");
-			}
+			}			
 			this.view.exibir("0 - Sair");
 			opcao = Integer.parseInt(this.view.receber());
 			tratarEscolha(opcao);
 		}while(opcao != 0);		
 	}
 	
+	/*
+	 * Trabalha com o primeiro level de escolhas do usuario (qual conta criar)
+	 */
 	public void tratarEscolha(int opcao){
+		//usado nas escolhas de operacoes nas contas
+		int escolha = 1;
 		switch(opcao){
 			
 			case 1:
@@ -66,17 +72,100 @@ public class Controller {
 					this.contControl = new ContaController();
 					this.contControl.criarConta();
 					this.conta = this.contControl.getConta();
-					this.cliente.setConta(this.conta);
+					this.cliente.setConta(this.conta);				
 					contaCriada = true;
-					this.view.exibir("Conta Criada com Sucesso!");
+					this.view.exibir("Conta Criada com Sucesso!");							
+					while(escolha != 0){						
+						escolha = menuOperacoes();
+						tratarContaComum(escolha);
+					}
 				break;
-			case 5:
+			case 3:
+					this.contControl = new ContaController();
+					this.contControl.criarContaEspecial();
+					this.contaEspecial = this.contControl.getContaEspecial();
+					contaCriada = true;
+					this.view.exibir("Conta Especial criada com Sucesso!");
+					while(escolha != 0){						
+						escolha = menuOperacoes();
+						tratarContaEspecial(escolha);
+					}
+				break;
+			case 4:
+					this.contControl = new ContaController();
+					this.contControl.criarContaInvestimento();
+					this.contaInvestimento = this.contControl.getContaInvestimento();
+					contaCriada = true;
+					contaInvestimentoCriada = true;		
+					while(escolha != 0){						
+						escolha = menuOperacoes();
+						tratarContaInvestimento(escolha);
+					}
+				break;
+				default:
+					this.view.exibir("Opcao nao encontrada");
+					break;
+			
+		}
+	}
+	
+	public int menuOperacoes(){
+		this.view.exibir("1 - Depositar");
+		this.view.exibir("2 - Sacar");
+		if(contaInvestimentoCriada){
+			this.view.exibir("3 - dividendos");
+		}
+		this.view.exibir("0 - Sair");
+		return Integer.parseInt(this.view.receber());		
+	}
+	
+	
+	public void tratarContaComum(int escolha){
+		switch(escolha){
+			case 1:
+				this.contControl.depositar();
+				this.contControl.exibirSaldo();
+				break;
+			case 2:
+				this.contControl.sacar();
+				this.contControl.exibirSaldo();
+				break;
+			default:
+				this.view.exibir("Opcao nao encontrada");
+				break;
+		}
+	}
+	
+	public void tratarContaEspecial(int escolha){
+		switch(escolha){
+			case 1:
 					this.contControl.depositar();
 					this.contControl.exibirSaldo();
 				break;
-			case 6:
+			case 2:
+					this.contControl.setConta(contaEspecial);
 					this.contControl.sacar();
 					this.contControl.exibirSaldo();
+				break;
+			default:
+				this.view.exibir("Opcao nao encontrada");
+				break;
+		}
+	}
+	
+	public void tratarContaInvestimento(int escolha){
+		switch(escolha){
+			case 1:
+					this.contControl.depositar();
+					this.contControl.exibirSaldo();
+				break;
+			case 2:
+					this.contControl.setConta(this.contaInvestimento);
+					this.contControl.sacar();
+					this.contControl.exibirSaldo();
+				break;
+			case 3:
+					
 				break;
 		}
 	}

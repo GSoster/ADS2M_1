@@ -1,5 +1,7 @@
 package model;
 
+import lib.SaldoInsuficienteException;
+
 public class Especial extends Conta {
 	//Atributos
 	private double limite;
@@ -17,5 +19,13 @@ public class Especial extends Conta {
 	public double getLimite(){
 		return this.limite;
 	}
+	
+	public void sacar(double valor) throws SaldoInsuficienteException{
+		if(this.saldo + this.limite < valor){
+			throw new SaldoInsuficienteException();
+		}
+		this.saldo -= valor;
+	}
+	
 
 }//fim da classe
