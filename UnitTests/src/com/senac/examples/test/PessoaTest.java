@@ -60,6 +60,14 @@ public class PessoaTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		joao = null;
+		novo = null;
+		velho = null;
+		matusalem = null;
+		hoje = null;
+		ontem = null;
+		lastYear = null;
+		tenYear = null;
 	}
 
 	/**
@@ -132,19 +140,21 @@ public class PessoaTest {
 	/**
 	 * Test method for {@link java.lang.Object#equals(java.lang.Object)}.
 	 */
+	/*
 	@Test
 	public void testEquals() {
 		fail("Not yet implemented");
 	}
-
+*/
 	/**
 	 * Test method for {@link java.lang.Object#toString()}.
 	 */
+	/*
 	@Test
 	public void testToString() {
 		fail("Not yet implemented");
 	}
-	
+	*/
 	
 	//o CODIGO(expected = UmaUnicaException.class) serve para dizer que esperamos que 
 	//o teste gere uma exceçao.
