@@ -1041,3 +1041,12 @@ java.net.URISyntaxException: Expected authority at index 8: SOCKS://
 	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:193)
 	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2014-04-09 08:30:07.420 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.7.0_11
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=pt_BR
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.core.resources 2 10035 2014-04-09 08:31:47.362
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
