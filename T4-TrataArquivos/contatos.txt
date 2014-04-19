@@ -1,21 +1,20 @@
-Contatos -> Nome - Endereço - Telefone
-Bruno Pereira - Rua Andrade Neves - (34)456-4561
-Fabio Santos - Av. Zumbi dos Palmares - (48)336-3154
-Daiana Bountielli - Rua Mathias - (48)389-3345
-Daiana Bountielli - Rua Mathias - (33)331-3365
-Estevan Martinez - St. Correa - (38)343-4456
-Adalberto Schimitz - Rua Andrade Neves - (33)456-3154
-Carlos Pedroso - Rua Sao Paulo - (33)335-3894
-Daiana Ribeiro - Rua Alendrina - (43)335-4321
-Aldir Schimitz - Rua Rio de Janeiro - (33)885-3345
-Elaine Ribeiro - Av Porca Maddona - (38)331-3312
-Bruno StoffenHouer - Av. Salvatorri Trulliano - (34)335-3894
-Aldir Schimitz - St. San Martin - (45)412-7895
-Estevan Pegglow - Av. Pallermo - (43)332-3214
-Gustavo Melo - St. San Martin - (33)332-3431
-Estevan Pereira - Rua Gari - (33)343-4123
-Fernanda de Jesus - Rua Rio de Janeiro - (33)336-4567
-Gustavo Ribeiro - Rua Alendrina - (31)343-8853
-Estevan Valentino - Av.Coronel Valadares - (38)336-4512
-Breno Pereira - Rua Alendrina - (45)484-3356
-Carlos Schimitz - Rua Stephn - (34)456-3214
+Fabio Santos;Rua Gari;(88)332-4561
+Denise Muller;Rua Sao Paulo;(34)431-3321
+Bernardo StoffenHouer;St. San Martin;(32)445-3321
+Estevan Schimitz;St. Correa;(88)332-4456
+Fernanda Trukisinsky;Av.Coronel Valadares;(78)331-4321
+Diego Melo;Av. Rio Grande;(34)431-8853
+Fernanda Marinho;Av. Zumbi dos Palmares;(41)321-3432
+Elaine Pedroso;Rua San Sebastian;(34)885-3312
+Gustavo Bountielli;Rua Alendrina;(32)885-4845
+Daiana Marinho;Av. Rio Grande;(78)431-4321
+Estevan Melo;Av.Coronel Valadares;(34)451-4321
+Fernanda Valentino;Av. Assis. Brasil;(33)332-3365
+Bruno Melo;Rua Sao Paulo;(48)332-3154
+Bruno Valentino;Rua Pernambuco;(43)445-3312
+Bernardo Pegglow;Av. Zumbi dos Palmares;(88)456-4567
+Fernanda Soster;Av.Coronel Valadares;(41)332-4123
+Breno Trukisinsky;Av. Salvatorri Trulliano;(43)885-4512
+Fabio Valentino;Rua Pernambuco;(38)321-3154
+Fabricia Pedroso;Av Porca Maddona;(45)432-3431
+Denise Trukisinsky;St. San Martin;(38)331-3312

@@ -12,6 +12,11 @@ public class Pessoa{
         this.setEndereco(e);
         this.setTelefone(t);        
     }
+    //Sobrecarga de construtor.
+    public Pessoa(String nome, String endereco){
+    	this.setNome(nome);
+    	this.setEndereco(endereco);
+    }
     
     //metodos acessores
     public void setNome(String n){

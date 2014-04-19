@@ -8,14 +8,10 @@ public class Main {
 	
 	public static void main(String[] args) {
 	
-		ArquivoController ac = new ArquivoController();
 		
-		ac.gravarContatos();
-		
-		
-		ac.exibirContatosSalvos();
-		
-		
+		ClienteContaController cc = new ClienteContaController();
+		cc.criarConta();
+	
 	
 	}
 

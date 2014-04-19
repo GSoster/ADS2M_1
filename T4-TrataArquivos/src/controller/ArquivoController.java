@@ -20,14 +20,16 @@ public class ArquivoController {
 		this.p = pController.retornarPessoa(pController.retornarTelefone());
 	}
 	
-	//Gera 20 contatos e os guarda no arquivo.
+	/*Gera 20 contatos e os guarda no arquivo.
+	 * Os dados dos contatos são salvos com separaçao via ; para que fique facil de
+	 * extrai-los e então criar novos contatos na outra parte da aplicacao
+	 */
 	public void gravarContatos(){
 		try{
-			arquivo = new Arquivo("contatos.txt");			
-			arquivo.gravarString("Contatos -> Nome - Endereço - Telefone");
+			arquivo = new Arquivo("contatos.txt");						
 			for(int i = 0; i<20; i++){
 				this.gerarContato();
-				this.arquivo.gravarString(this.p.getNomeCompleto() + " - " + this.p.getEndereco() + " - " + this.p.getTelefoneTratado());
+				this.arquivo.gravarString(this.p.getNomeCompleto() + ";" + this.p.getEndereco() + ";" + this.p.getTelefoneTratado());
 			}
 		}catch(IOException ioe){
 			System.out.print(ioe.getMessage());
@@ -59,6 +61,34 @@ public class ArquivoController {
 				System.out.print(ioe.getMessage());
 			}			
 		}	
+	}
+	
+	/*
+	 * Separa os dados de uma linha (pelos ; ) e cria um novo objeto pessoa com eles
+	 * então adiciona esse novo obj pessoa a referencia this.p 
+	 */
+	public void separarDadosContato(){
+		try{			
+			String contato = this.arquivo.lerLinha();														
+				String linha[] = contato.split(";");
+				//System.out.println(linha[0]); //nomeCompleto
+				//System.out.println(linha[1]); //endereco
+				//System.out.println(linha[2]); //telefone
+				//Criando uma pessoa com nome completo e endereco
+				this.p = new Pessoa(linha[0],linha[1]);				
+		}catch(IOException ioe){
+			System.out.print(ioe.getMessage());
+		}finally{
+			try{
+				arquivo.encerrarLeitura();
+			}catch(IOException ioe){
+				System.out.print(ioe.getMessage());
+			}			
+		}	
+	}
+	
+	public Cliente getCliente(){
+		return new Cliente(this.p.getNome(), this.p.getEndereco());
 	}
 	
 }
