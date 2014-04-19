@@ -46,6 +46,7 @@ public class Vetor {
 		v.insert(3);
 		v.insert(4);
 		
+		
 		for(int i = 0; i<v.size(); i++){
 			System.out.println(v.get(i));
 		}

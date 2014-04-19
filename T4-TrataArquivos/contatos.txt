@@ -1,0 +1,21 @@
+Contatos -> Nome - Endereço - Telefone
+Guilherme Santos - St. Correa - (45)456-4312
+Denise Martinez - Rua Amazonas - (31)445-4312
+Fabricia de Jesus - Rua Stephn - (33)334-3312
+Fernanda Pereira - Rua Gari - (45)331-4312
+Dagoberto Martinez - Av. Salvatorri Trulliano - (31)451-4567
+Bartolomeu StoffenHouer - Av Porca Maddona - (45)332-4321
+Gustavo Schimitz - Rua Sao Paulo - (45)432-3356
+Denise Melo - Av.Coronel Valadares - (45)412-7895
+Adalberto Silveira - Rua Mathias - (48)445-3894
+Breno Santos - Rua Mathias - (44)456-3214
+Diego Trukisinsky - Rua Mathias - (43)451-3431
+Diego de Jesus - Av. Rio Grande - (31)885-3365
+Bartolomeu Santos - Av Porca Maddona - (45)321-4321
+Aldair Melo - Rua Rio de Janeiro - (33)432-3432
+Carlos Schimitz - Rua Sao Paulo - (41)456-3365
+Bruno Valentino - Av. Assis. Brasil - (33)432-8853
+Diego Silveira - Av. Isaura - (33)321-3365
+Daiana Trukisinsky - Rua Amazonas - (41)432-3365
+Breno Silveira - Rua Gari - (48)484-3894
+Gustavo StoffenHouer - Av.Coronel Valadares - (34)451-3356
