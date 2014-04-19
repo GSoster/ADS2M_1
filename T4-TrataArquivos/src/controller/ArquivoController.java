@@ -33,12 +33,32 @@ public class ArquivoController {
 			System.out.print(ioe.getMessage());
 		}finally{
 			try{
-				arquivo.encerrar();
+				arquivo.encerrarGravacao();
 			}catch(IOException ioe){
 				System.out.print(ioe.getMessage());
-			}
-			
-		}
-	
+			}			
+		}	
 	}	
+	
+	/*quando arquivo.lerLinha() retornar NULL é porque acabaram as
+	 * informações do arquivo 
+	 */
+	public void exibirContatosSalvos(){
+		try{
+			String linha = this.arquivo.lerLinha();
+			while(linha != null){
+				linha = this.arquivo.lerLinha();
+				System.out.println(linha);
+			}
+		}catch(IOException ioe){
+			System.out.print(ioe.getMessage());
+		}finally{
+			try{
+				arquivo.encerrarLeitura();
+			}catch(IOException ioe){
+				System.out.print(ioe.getMessage());
+			}			
+		}	
+	}
+	
 }

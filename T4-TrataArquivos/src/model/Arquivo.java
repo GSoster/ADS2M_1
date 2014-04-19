@@ -1,9 +1,6 @@
 package model;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-
+import java.io.*;
 public class Arquivo {
 	
 	/*
@@ -16,13 +13,20 @@ public class Arquivo {
 	//Atributos
 	private FileWriter arquivo = null;//responsável por criar/abrir o arquivo 
 	private PrintWriter gravarNoArquivo = null;//responsável por gravar no arquivo	
+	private FileReader arquivoLer = null;//responsavel por abrir o arquivo para ler
+	private BufferedReader lerArquivo = null;//responsavel por leitura do arquivo
 	
-	
-	//Construtor -> define qual arquivo será criado/aberto.
-	//aponta o atributo responsável por gravar para esse arquivo
-	public Arquivo(String arquivo) throws IOException{		
-		this.arquivo = new FileWriter(arquivo);		
-		this.gravarNoArquivo  = new PrintWriter(this.arquivo);				
+	/* Construtor -> define qual arquivo será criado/aberto.
+	 * aponta o atributo responsável por gravar para esse arquivo
+	 * 
+	 */
+	public Arquivo(String arquivo) throws IOException{
+		//para gravar:
+		this.arquivo = new FileWriter(arquivo);				
+		this.gravarNoArquivo  = new PrintWriter(this.arquivo);
+		//Para ler:
+		this.arquivoLer = new FileReader(arquivo);
+		this.lerArquivo = new BufferedReader(this.arquivoLer);
 	}
 	
 	/*
@@ -33,8 +37,18 @@ public class Arquivo {
 		this.gravarNoArquivo.printf(mensagem+"%n");		
 	}
 	
-	public void encerrar() throws IOException{
-		this.arquivo.close();
+
+	//Le o conteudo do arquivo linha a linha.
+	public  String lerLinha() throws IOException{
+		return this.lerArquivo.readLine();
 	}
 	
+	//Fecha o arquivo
+	public void encerrarGravacao() throws IOException{
+		this.arquivo.close();		
+	}
+	
+	public void encerrarLeitura() throws IOException{
+		this.arquivoLer.close();
+	}
 }

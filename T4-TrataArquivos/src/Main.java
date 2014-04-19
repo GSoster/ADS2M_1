@@ -13,7 +13,7 @@ public class Main {
 		ac.gravarContatos();
 		
 		
-		
+		ac.exibirContatosSalvos();
 		
 		
 	

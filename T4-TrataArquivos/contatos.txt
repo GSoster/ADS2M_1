@@ -1,21 +1,21 @@
 Contatos -> Nome - Endereço - Telefone
-Guilherme Santos - St. Correa - (45)456-4312
-Denise Martinez - Rua Amazonas - (31)445-4312
-Fabricia de Jesus - Rua Stephn - (33)334-3312
-Fernanda Pereira - Rua Gari - (45)331-4312
-Dagoberto Martinez - Av. Salvatorri Trulliano - (31)451-4567
-Bartolomeu StoffenHouer - Av Porca Maddona - (45)332-4321
-Gustavo Schimitz - Rua Sao Paulo - (45)432-3356
-Denise Melo - Av.Coronel Valadares - (45)412-7895
-Adalberto Silveira - Rua Mathias - (48)445-3894
-Breno Santos - Rua Mathias - (44)456-3214
-Diego Trukisinsky - Rua Mathias - (43)451-3431
-Diego de Jesus - Av. Rio Grande - (31)885-3365
-Bartolomeu Santos - Av Porca Maddona - (45)321-4321
-Aldair Melo - Rua Rio de Janeiro - (33)432-3432
-Carlos Schimitz - Rua Sao Paulo - (41)456-3365
-Bruno Valentino - Av. Assis. Brasil - (33)432-8853
-Diego Silveira - Av. Isaura - (33)321-3365
-Daiana Trukisinsky - Rua Amazonas - (41)432-3365
-Breno Silveira - Rua Gari - (48)484-3894
-Gustavo StoffenHouer - Av.Coronel Valadares - (34)451-3356
+Bruno Pereira - Rua Andrade Neves - (34)456-4561
+Fabio Santos - Av. Zumbi dos Palmares - (48)336-3154
+Daiana Bountielli - Rua Mathias - (48)389-3345
+Daiana Bountielli - Rua Mathias - (33)331-3365
+Estevan Martinez - St. Correa - (38)343-4456
+Adalberto Schimitz - Rua Andrade Neves - (33)456-3154
+Carlos Pedroso - Rua Sao Paulo - (33)335-3894
+Daiana Ribeiro - Rua Alendrina - (43)335-4321
+Aldir Schimitz - Rua Rio de Janeiro - (33)885-3345
+Elaine Ribeiro - Av Porca Maddona - (38)331-3312
+Bruno StoffenHouer - Av. Salvatorri Trulliano - (34)335-3894
+Aldir Schimitz - St. San Martin - (45)412-7895
+Estevan Pegglow - Av. Pallermo - (43)332-3214
+Gustavo Melo - St. San Martin - (33)332-3431
+Estevan Pereira - Rua Gari - (33)343-4123
+Fernanda de Jesus - Rua Rio de Janeiro - (33)336-4567
+Gustavo Ribeiro - Rua Alendrina - (31)343-8853
+Estevan Valentino - Av.Coronel Valadares - (38)336-4512
+Breno Pereira - Rua Alendrina - (45)484-3356
+Carlos Schimitz - Rua Stephn - (34)456-3214
