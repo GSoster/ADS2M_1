@@ -1,8 +1,0 @@
-INDEX VERSION 1.126+C:\Users\guilherme\Documents\GitHub\ADS2M_1\.metadata\.plugins\org.eclipse.jdt.core
-2458689495.index
-3666770268.index
-3755456200.index
-1087954921.index
-371830279.index
-625799541.index
-3551024042.index
