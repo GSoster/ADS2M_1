@@ -16,7 +16,7 @@ public class Numeros {
 	}
 	
 	public int getSize(){
-		return this.numeros.length;
+		return this.numeros.length;		
 	}
 	
 }

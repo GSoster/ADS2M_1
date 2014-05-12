@@ -1,7 +1,6 @@
 package test;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.fail;
 import model.Deserto;
 
 import org.junit.After;
@@ -26,10 +25,9 @@ public class testDeserto {
 	@Test
 	public void testDesertoIniciaZerado(){
 		deserto = new Deserto();
-		assertEquals(0,deserto.getValorDaPosicao(0));
-		assertEquals(0,deserto.getValorDaPosicao(1));
-		assertEquals(0,deserto.getValorDaPosicao(2));
-		assertEquals(0,deserto.getValorDaPosicao(3));
+		for(int i = 0; i< 10; i++){
+			assertEquals(0,deserto.getValorDaPosicao(i));			
+		}
 		
 	}
 	
