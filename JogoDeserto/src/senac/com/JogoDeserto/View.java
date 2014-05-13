@@ -11,7 +11,7 @@ public class View {
 	}
 	
 	public void apresentacao(){
-		System.out.println("BEM VINDO A TRAVESSIA Do DESERTO!");
+		System.out.println("BEM VINDO AO DESERTO DO MAD MAX!");
 	}
 	
 	public String exibirMenuInicial() {		
