@@ -17,6 +17,7 @@ public class Controller {
 		while(this.caminhao.getPosicao() != 9){
 			String resp = this.view.exibirMenuInicial();
 			this.tratarEntrada(resp);
+			this.exibirStatus();
 		}
 		this.view.gameOver();
 	}
@@ -81,7 +82,17 @@ public class Controller {
 		}
 	}
 	
-	
+	private void exibirStatus(){
+		this.view.montaFichaStatus();
+		this.view.statusCaminhaoPosicao(this.caminhao.getPosicao());
+		this.view.statusCaminhaoCombustivel(this.caminhao.getQtdCombustivel());
+		if(this.caminhao.getPosicao() == 0){
+			this.view.statusDesertoCombustivelPosicaoInicial();
+		}else{
+		this.view.statusDesertoCombustivelPosicao(this.deserto.getValorDaPosicao(this.caminhao.getPosicao()));
+		}
+		this.view.montaFichaStatus();
+	}
 	
 }
 

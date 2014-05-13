@@ -26,7 +26,27 @@ public class View {
 	public void gameOver(){
 		System.out.println("GAME OVER!");
 	}
+
+	public void montaFichaStatus(){
+		System.out.println("#########STATUS#########");
+	}
 	
+	public void statusCaminhaoPosicao(int posicao) {
+		System.out.println("Posicao do caminhao: "+posicao);		
+	}
+
+	public void statusCaminhaoCombustivel(int qtdCombustivel) {
+		System.out.println("Quantidade de Combustivel do Caminhao: "+qtdCombustivel);
+		
+	}
+
+	public void statusDesertoCombustivelPosicao(int valorDaPosicao) {		
+		System.out.println("Quantidade de Combustivel nesta posicao do deserto: "+valorDaPosicao);		
+	}
+	
+	public void statusDesertoCombustivelPosicaoInicial(){
+		System.out.println("Quantidade de Combustivel nesta posicao do deserto: INFINITO");
+	}
 	
 	
 	
