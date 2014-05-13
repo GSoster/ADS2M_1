@@ -48,6 +48,13 @@ public class Caminhao {
 		this.qtdCombustivel--;
 	}
 	
+	
+	public void carregar() throws MaxOfGasException{
+		if(this.qtdCombustivel == 6){
+			throw new MaxOfGasException();
+		}
+		this.qtdCombustivel++;
+	}
 }
 
 

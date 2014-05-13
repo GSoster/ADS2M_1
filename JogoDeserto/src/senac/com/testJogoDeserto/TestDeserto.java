@@ -10,7 +10,7 @@ import senac.com.JogoDeserto.Deserto;
 
 public class TestDeserto {
 
-	Deserto deserto;
+	Deserto deserto = null;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -29,8 +29,21 @@ public class TestDeserto {
 		}
 	}
 	
-	@Test public void testAdicionarValorEmPosicao(){		
-		
+	@Test 
+	public void testAdicionarValorEmPosicao(){		
+		assertEquals(0,deserto.getValorDaPosicao(3));
+		deserto.setValorNaPosicao(3);
+		assertEquals(1,deserto.getValorDaPosicao(3));
 	}
 
+	@Test
+	public void testRetirarValorDaPosicao(){		
+		assertEquals(0,deserto.getValorDaPosicao(3));
+		deserto.setValorNaPosicao(3);
+		deserto.setValorNaPosicao(3);
+		deserto.setValorNaPosicao(3);
+		assertEquals(3,deserto.getValorDaPosicao(3));
+		deserto.retirarValorDaPosicao(3);
+		assertEquals(2,deserto.getValorDaPosicao(3));
+	}
 }
