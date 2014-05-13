@@ -9,6 +9,8 @@ import org.junit.rules.ExpectedException;
 
 
 import senac.com.JogoDeserto.Caminhao;
+import senac.com.JogoDeserto.OutOfDesertException;
+import senac.com.JogoDeserto.OutOfGasException;
 
 public class TestCaminhao {
 
@@ -34,14 +36,14 @@ public class TestCaminhao {
 	}
 	
 	@Test
-	public void testCaminhaoAvancaPosicao(){
+	public void testCaminhaoAvancaPosicao() throws OutOfDesertException{
 		assertEquals(0,caminhao.getPosicao());
 		caminhao.avancar();
 		assertEquals(1,caminhao.getPosicao());
 	}
 	
 	@Test
-	public void testCaminhaoGastaCombustivelAoAvancar(){
+	public void testCaminhaoGastaCombustivelAoAvancar() throws OutOfDesertException{
 		assertEquals(6,caminhao.getQtdCombustivel());
 		caminhao.avancar();
 		assertEquals(5,caminhao.getQtdCombustivel());
@@ -52,7 +54,7 @@ public class TestCaminhao {
 	 * faz para usar o exception expected...
 	 */
 	@Test 
-	public void testCaminhaoNaoAndaSemCombustivel(){
+	public void testCaminhaoNaoAndaSemCombustivel() throws OutOfDesertException{
 		assertEquals(6,caminhao.getQtdCombustivel());
 		for(int i = 0; i<6; i++){
 			caminhao.avancar();
@@ -61,25 +63,73 @@ public class TestCaminhao {
 	}
 	
 	@Test
-	public void testCaminhaoGastaCombustivelAoVoltar(){
+	public void testCaminhaoGastaCombustivelAoVoltar() throws OutOfDesertException{
 		assertEquals(6,caminhao.getQtdCombustivel());
 		caminhao.avancar();
-		assertEquals(5,caminhao.getQtdCombustivel());
+		caminhao.avancar();
+		assertEquals(4,caminhao.getQtdCombustivel());
 		caminhao.voltar();
-		assertEquals(4,caminhao.getQtdCombustivel());		
+		assertEquals(3,caminhao.getQtdCombustivel());		
 	} 
 	
 	@Test
 	public void testCaminhaoVoltaPosicao(){
 		assertEquals(0,caminhao.getPosicao());
-		caminhao.avancar();
-		caminhao.avancar();
-		caminhao.avancar();
+		try {
+			caminhao.avancar();
+			caminhao.avancar();
+			caminhao.avancar();
+		} catch (OutOfDesertException e1) {
+			e1.printStackTrace();
+		}
+		
 		assertEquals(3,caminhao.getPosicao());
-		caminhao.voltar();
+		try {
+			caminhao.voltar();
+		} catch (OutOfDesertException e) {
+			e.printStackTrace();
+		}
 		assertEquals(2,caminhao.getPosicao());
 	}
 	
-	
+	@Test
+	public void testCaminhaoRecargaCombustivelAoVoltarPosicaoInicial(){
+		assertEquals(0,caminhao.getPosicao());
+		try {
+			caminhao.avancar();
+			caminhao.avancar();
+		} catch (OutOfDesertException e1) { 
+			e1.printStackTrace();
+		}
+		
+		assertEquals(4,caminhao.getQtdCombustivel());
+		try {
+			caminhao.voltar();
+			caminhao.voltar();
+		} catch (OutOfDesertException e) { 
+			e.printStackTrace();
+		}
+		
+		assertEquals(6,caminhao.getQtdCombustivel());
+	}
 
+	
+	@Test
+	public void testLargarCombustivel(){		
+		try {
+			caminhao.avancar();
+			caminhao.avancar();
+			caminhao.avancar();
+		} catch (OutOfDesertException e) { 
+			e.printStackTrace();
+		}
+		
+		assertEquals(3,caminhao.getQtdCombustivel());
+		try {
+			caminhao.descarregar();
+		} catch (OutOfGasException e) {
+			e.printStackTrace();
+		}
+		assertEquals(2,caminhao.getQtdCombustivel());		
+	}
 }
