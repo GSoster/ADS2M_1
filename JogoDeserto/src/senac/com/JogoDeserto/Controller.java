@@ -37,6 +37,9 @@ public class Controller {
 			case "carregar":
 				this.carregar();
 				break;
+			default:
+				this.view.opcaoInvalida();
+				break;
 		}
 	}
 	

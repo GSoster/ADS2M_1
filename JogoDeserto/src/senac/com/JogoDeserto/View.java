@@ -48,6 +48,9 @@ public class View {
 		System.out.println("Quantidade de Combustivel nesta posicao do deserto: INFINITO");
 	}
 	
+	public void opcaoInvalida(){
+		System.out.println("Opção Inválida!");
+	}
 	
 	
 }

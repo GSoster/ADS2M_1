@@ -49,4 +49,23 @@ public class TestFuncionario {
 	public void testNaoPermiteCriarObjetoComSalarioInvalido() throws Exception{
 		new Funcionario(Cargo.ESTAGIARIO, 0);		
 	}
+	
+	@Test(expected=java.lang.Exception.class)
+	public void testSalarioNaoPodeDiminuir() throws Exception{
+		funcionario.ajustaSalario(-5.35);
+	}
+	
+	@Test
+	public void testSalarioCorretamenteAjustado() throws Exception{
+		Funcionario func = new Funcionario(Cargo.ESTAGIARIO, 1000.00);
+		func.ajustaSalario(4.23);
+		//o 0.00001 no final serve para que se tenha precisao de 4 casas decimais após o zero 
+		assertEquals(1042.30,func.getSalario(), 0.00001);
+	}
+	
+	@Test(expected=java.lang.Exception.class)
+	public void testSalarioNaoAumentaMenosQueDissidio() throws Exception{		
+		funcionario.ajustaSalario(funcionario.getCargo().getDissidio() - 0.001);//tem que lancar uma excecao
+	}
+	
 }

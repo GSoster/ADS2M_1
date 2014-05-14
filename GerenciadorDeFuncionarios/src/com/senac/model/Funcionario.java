@@ -29,4 +29,11 @@ public class Funcionario {
 		return this.salario;
 	}
 
+	public void ajustaSalario(double percentual) throws Exception{
+		if(percentual < 0 || percentual < cargo.getDissidio()){
+			throw new Exception("Percentual de Ajuste Inválido!");
+		}
+		this.salario = this.salario * (100+percentual)/100.00;
+	}
+
 }
