@@ -1,11 +1,11 @@
 package com.senac.listaEncadeada;
 //esse <T extends Comparable<T>>  pode ficar no Nodo também.
 //public class Lista<T extends Comparable<T>>  {
-public class Lista{
+public class ListaDuplamenteEncadeada{
 
 	//private Nodo<T> head = null;
 	private Nodo head = null;
-	
+	private Nodo tail = null;
 	
 	public void insere(int valor, Nodo anterior){
 		Nodo n = new Nodo(valor);
@@ -36,7 +36,10 @@ public class Lista{
 		return null;
 	}
 	
-	
+	/**
+	 * Verifica se uma lista está vazia ou não.
+	 * @return boolean verdadeiro se estiver vazia, falso se contiver algo
+	 */
 	public boolean isVazia(){
 		if(this.head == null){
 			return true;
@@ -44,13 +47,21 @@ public class Lista{
 			return false;
 	}
 	
-	
+	/**
+	 * Faz uma busca e verifica se existe um nodulo com valor anterio ao a
+	 * ser inserido. Se não existir o novo nodulo é inserido na head
+	 * Caso exista o nodo anterior ao que deve ser inserido passa a apontar para
+	 * o nodo a ser inserido, e o nodo a ser inserido passa a apontar para onde o anterior
+	 * apontava.
+	 * @param valor --> será usado para criar o Nodulo que será inserido
+	 */
 	public void insertOrdenado(int valor){
 		Nodo n = new Nodo(valor);
 		Nodo ant = procuraAnterior(valor);
 			if(ant == null){
 				n.setNext(this.head);
 				this.head = n;
+				n.setLast(null);
 			}else{
 				Nodo prox = ant.getNext();
 				n.setNext(prox);
@@ -58,7 +69,11 @@ public class Lista{
 			}
 		}
 	
-	
+	/**
+	 * 
+	 * @param valor --> valor a ser buscado na lista
+	 * @return Nodulo anterior ao que foi procurado, ou null caso não encontre
+	 */
 	public Nodo procuraAnterior(int valor){		
 		Nodo iter = this.head;
 		Nodo ant = null;
