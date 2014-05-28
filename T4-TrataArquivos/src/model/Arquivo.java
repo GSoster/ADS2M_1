@@ -29,6 +29,17 @@ public class Arquivo {
 		this.lerArquivo = new BufferedReader(this.arquivoLer);
 	}
 	
+	//Sobrecarga de construtor (para poder gravar ao fim do arquivo)
+	public Arquivo(String arquivo, boolean gravarNoFim) throws IOException{
+		//para gravar:
+		this.arquivo = new FileWriter(arquivo, gravarNoFim);				
+		this.gravarNoArquivo  = new PrintWriter(this.arquivo);
+		//Para ler:
+		this.arquivoLer = new FileReader(arquivo);
+		this.lerArquivo = new BufferedReader(this.arquivoLer);
+	}
+	
+	
 	/*
 	 * Metodo responsavel por gravar os contatos no arquivo .txt
 	 * ATENÇÃO!! -> o %n no fim do texto é para que a proxima string va para uma nova linha!

@@ -16,4 +16,22 @@ public class View {
 	}
 	
 	
+	public int recebeValor(){
+		System.out.println("Digite um valor decimal a ser convertido para binario: ");
+		return ler.nextInt();
+	}
+	
+	public String recebeExpressao(){
+		System.out.println("Digite uma expressao para converter: ");
+		String expressao = (String)ler.nextLine();	
+				
+		return "a";		
+	}
+	
+	public void exibir(String mensagem){
+		System.out.println(mensagem);
+	}
+	
+	
+	
 }

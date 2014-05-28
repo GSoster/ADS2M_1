@@ -9,6 +9,7 @@ public class ArquivoController {
 	private PController pController = null;
 	private Pessoa p = null;
 	private Arquivo arquivo = null;
+	private Arquivo arquivoContas = null;
 	
 	//Construtor
 	public ArquivoController(){

@@ -1,20 +1,20 @@
-Fabio Santos;Rua Gari;(88)332-4561
-Denise Muller;Rua Sao Paulo;(34)431-3321
-Bernardo StoffenHouer;St. San Martin;(32)445-3321
-Estevan Schimitz;St. Correa;(88)332-4456
-Fernanda Trukisinsky;Av.Coronel Valadares;(78)331-4321
-Diego Melo;Av. Rio Grande;(34)431-8853
-Fernanda Marinho;Av. Zumbi dos Palmares;(41)321-3432
-Elaine Pedroso;Rua San Sebastian;(34)885-3312
-Gustavo Bountielli;Rua Alendrina;(32)885-4845
-Daiana Marinho;Av. Rio Grande;(78)431-4321
-Estevan Melo;Av.Coronel Valadares;(34)451-4321
-Fernanda Valentino;Av. Assis. Brasil;(33)332-3365
-Bruno Melo;Rua Sao Paulo;(48)332-3154
-Bruno Valentino;Rua Pernambuco;(43)445-3312
-Bernardo Pegglow;Av. Zumbi dos Palmares;(88)456-4567
-Fernanda Soster;Av.Coronel Valadares;(41)332-4123
-Breno Trukisinsky;Av. Salvatorri Trulliano;(43)885-4512
-Fabio Valentino;Rua Pernambuco;(38)321-3154
-Fabricia Pedroso;Av Porca Maddona;(45)432-3431
-Denise Trukisinsky;St. San Martin;(38)331-3312
+Bernardo Machado;Av. Zumbi dos Palmares;(41)315-4561
+Gustavo Santos;Av. Salvatorri Trulliano;(48)432-4567
+Daiana Muller;Rua Rio de Janeiro;(34)389-3345
+Denise Melo;Rua Sao Paulo;(43)315-3312
+Diego Santos;Rua Rio de Janeiro;(33)445-8853
+Diego Pereira;Av. Pallermo;(45)412-4123
+Denise de Jesus;Av Porca Maddona;(43)451-4567
+Daiana Pereira;Av Porca Maddona;(34)336-4845
+Estevan StoffenHouer;Av. Zumbi dos Palmares;(48)789-4312
+Bernardo Melo;Rua Andrade Neves;(32)885-3432
+Breno Valentino;Av. Isaura;(33)389-4845
+Fabricia Santos;Av.Coronel Valadares;(33)335-3894
+Fernanda Machado;Rua Stephn;(33)451-8853
+Fernanda Bountielli;Rua Pernambuco;(33)389-4123
+Adalberto Valentino;Rua San Sebastian;(45)431-4456
+Bernardo Silveira;Av. Isaura;(32)456-4845
+Elaine Pegglow;Rua Andrade Neves;(48)334-3432
+Guilherme Bountielli;Av. Assis. Brasil;(45)343-4567
+Dagoberto Silveira;Rua Rio de Janeiro;(78)484-3345
+Aldair Melo;Rua Gari;(45)332-3214
