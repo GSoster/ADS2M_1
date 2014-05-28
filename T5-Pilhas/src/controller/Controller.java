@@ -49,22 +49,28 @@ public class Controller {
 		this.view.recebeExpressao();
 	}
 	
-	
+	/**
+	 * Recebe um valor inserido pelo usuário
+	 * verifica se é maior ou igual a 2
+	 * caso sim insere o resto da divisão do valor por 2 na pilha
+	 * no final insere o proprio valor na pilha (quando não passar mais no teste)
+	 * retira os elementos da pilha e exibe
+	 */
 	public void converteParaBinario(){
 		int valor = this.view.recebeValor();
 		this.pilha = new Pilha<Integer>();
-		while(valor > 2){
-			this.pilha.insert(valor%2);			
+		int qtd = 0;
+		while(valor >= 2){
+			this.pilha.insert(valor%2);				
 			valor = valor/2;
-		}
+			qtd++;
+		}		
+			this.pilha.insert(valor);			
 		//desempilhando:
 		String resultado = "";
-		int qtd = this.pilha.size()-1;
-		System.out.println("QTD: "+qtd);
-		while(qtd > -1){
-			resultado += this.pilha.get(qtd);
-			System.out.println("RESULTADO: "+resultado);
-			qtd--;
+		while(qtd >= 0){			
+			resultado += this.pilha.get(qtd);			
+			qtd--;			
 		}
 		this.view.exibir(resultado);
 	}
