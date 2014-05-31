@@ -9,7 +9,7 @@ public class ArquivoController {
 	private PController pController = null;
 	private Pessoa p = null;
 	private Arquivo arquivo = null;
-	private Arquivo arquivoContas = null;
+	
 	
 	//Construtor
 	public ArquivoController(){
@@ -92,4 +92,22 @@ public class ArquivoController {
 		return new Cliente(this.p.getNome(), this.p.getEndereco());
 	}
 	
+	/**
+	 * Cria um arquivo para salvar as contas e as salva no fim, sempre
+	 * 
+	 */
+	public void gravarContas(Conta conta){
+		try{
+				arquivo = new Arquivo("contas.txt", true);			
+				this.arquivo.gravarString(conta.getNumConta()+";"+conta.getNumVerificacao()+";"+conta.getSaldo());			
+		}catch(IOException ioe){
+			System.out.print(ioe.getMessage());
+		}finally{
+			try{
+				arquivo.encerrarGravacao();
+			}catch(IOException ioe){
+				System.out.print(ioe.getMessage());					
+			}	
+		}	
+	}
 }

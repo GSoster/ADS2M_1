@@ -1,7 +1,6 @@
 package controller;
 
 import model.*;
-import controller.*;
 import view.*;
 
 public class Controller {
@@ -24,6 +23,7 @@ public class Controller {
 	// Metodo construtor
 	public Controller() {
 		this.view = new View();		
+		this.arqControl = new ArquivoController();
 		this.inicio();
 	}
 
@@ -64,14 +64,15 @@ public class Controller {
 		int escolha = 1;
 		switch (opcao) {
 		case 0:
-			this.view.exibir("Obrigado por utilizar nossos servicos");
+			this.arqControl.gravarContas(this.cliente.getConta());
+			this.view.exibir("Obrigado por utilizar nossos servicos");			
 			break;
 		case 2:
 			this.contControl = new ContaController();
 			this.contControl.criarConta();
 			this.conta = this.contControl.getConta();
 			this.cliente.setConta(this.conta);
-			contaCriada = true;
+			contaCriada = true;			
 			this.view.exibir("Conta Criada com Sucesso!");
 			while (escolha != 0) {
 				escolha = menuOperacoes();
@@ -88,6 +89,7 @@ public class Controller {
 			this.contControl.criarContaEspecial();
 			this.contaEspecial = this.contControl.getContaEspecial();
 			this.contControl.setConta(contaEspecial);
+			this.cliente.setConta(this.contaEspecial);
 			contaCriada = true;
 			this.view.exibir("Conta Especial criada com Sucesso!");
 			while (escolha != 0) {
@@ -105,6 +107,7 @@ public class Controller {
 			this.contControl.criarContaInvestimento();
 			this.contaInvestimento = this.contControl.getContaInvestimento();
 			this.contControl.setConta(this.contaInvestimento);
+			this.cliente.setConta(this.contaInvestimento);
 			contaCriada = true;
 			contaInvestimentoCriada = true;
 			while (escolha != 0) {
@@ -130,7 +133,7 @@ public class Controller {
 	 */
 	public int menuOperacoes() {
 		this.view.exibir("1 - Depositar");
-		this.view.exibir("2 - Sacar");
+		this.view.exibir("2 - Sacar");		
 		if (contaInvestimentoCriada) {
 			this.view.exibir("3 - dividendos");
 		}
@@ -145,7 +148,7 @@ public class Controller {
 	public void tratarContaComum(int escolha) {
 		switch (escolha) {
 		case 0:
-			this.view.exibir("Obrigado por utilizar nossos servicos");
+			//this.view.exibir("Obrigado por utilizar nossos servicos");
 			break;
 		case 1:
 			this.contControl.depositar();
@@ -154,7 +157,7 @@ public class Controller {
 		case 2:
 			this.contControl.sacar();
 			this.contControl.exibirSaldo();
-			break;
+			break;			
 		default:
 			this.view.exibir("Opcao nao encontrada");
 			break;
@@ -168,7 +171,7 @@ public class Controller {
 	public void tratarContaEspecial(int escolha) {
 		switch (escolha) {
 		case 0:
-			this.view.exibir("Obrigado por utilizar nossos servicos");
+			//this.view.exibir("Obrigado por utilizar nossos servicos");
 			break;
 		case 1:
 			this.contControl.depositar();
@@ -191,7 +194,7 @@ public class Controller {
 	public void tratarContaInvestimento(int escolha) {
 		switch (escolha) {
 		case 0:
-			this.view.exibir("Obrigado por utilizar nossos servicos");
+			//this.view.exibir("Obrigado por utilizar nossos servicos");
 			break;
 		case 1:
 			this.contControl.depositar();

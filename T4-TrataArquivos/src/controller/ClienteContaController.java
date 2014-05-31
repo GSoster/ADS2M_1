@@ -1,10 +1,8 @@
 package controller;
 import model.*;
-import controller.*;
 import view.*;
 public class ClienteContaController {
 	//Atributos
-	private Conta conta;
 	private ArquivoController arqControl;
 	private Cliente cliente;
 	private View view;
@@ -34,8 +32,9 @@ public class ClienteContaController {
 		this.view.exibir("Endereco: "+this.cliente.getEndereco());
 		
 		//mostrando menu de operacoes (contas)
-		this.control.clienteCriado = true;
+		this.control.clienteCriado = true;		
 		this.control.exibirMenu();
+		this.arqControl.gravarContas(this.cliente.getConta());
 	}
 	
 }
